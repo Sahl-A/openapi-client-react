@@ -1,7 +1,17 @@
-# Getting Started with Create React App
+## prerequisits
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- prism restful api running on localhost
+- openapi-generator-cli
 
+## Add openapi-generator-cli
+
+- `sudo yarn global add @openapitools/openapi-generator-cli`
+- after installation run the following in project root path `openapi-generator-cli`
+- `openapi-generator-cli generate -g typescript-axios -i OPENAPI_FILE.yaml -o src/DESTINATION_FOLDER`
+
+# Getting Started with Create React App with typescript
+
+### `npx create-react-app FOLDER_NAME --template typescript`
 ## Available Scripts
 
 In the project directory, you can run:

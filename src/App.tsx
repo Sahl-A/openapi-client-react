@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { PostsApi, Configuration } from "./PostsClient";
+import Posts from "./components/Posts";
 
 function App() {
+  const posts = new PostsApi({
+    basePath: "http://localhost:4010",
+  } as Configuration);
+  posts
+    .getPosts()
+    .then((res) => console.log(res))
+    .catch(console.error);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Posts />
     </div>
   );
 }
